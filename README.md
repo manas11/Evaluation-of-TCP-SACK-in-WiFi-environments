@@ -19,13 +19,17 @@ ns-3 has an in built model for SACK. This project aims to evaluate the performan
 
 ## Week2:
 - Created sample programs to change TCP extensions in ns-3.
-- Understand setting up WiFi Nodes 
+- Understood setting up WiFi Nodes and positioning them.
+
 
 ## Week3:
-- 
+- Created a simple topology to measure average throughput in Wifi environment.
+- Added a command line argument to set sack ON or OFF.
+- Topology: AP0 (having 2 STAs), AP1 (having 1 STA)
+- Application used: PacketSinkHelper on APs, OnOffHelper on STAs
 
 # Experiment Criteria
-
+- 
 
 # Evaluation Parameters
 
