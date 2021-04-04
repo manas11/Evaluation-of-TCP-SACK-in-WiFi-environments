@@ -8,7 +8,7 @@ operating systems. It has an additional property of improving the TCP performanc
 ns-3 has an in built model for SACK. This project aims to evaluate the performanceof different TCP extensions in wireless networks, with and without SACK.
 
 # Setup
-- Network Simulator: ns-3.30.1 
+- Network Simulator: ns-3-dev
 - Operating System: Ubuntu 20.04.2 LTS
 
 # Weekly Progress
@@ -28,6 +28,16 @@ ns-3 has an in built model for SACK. This project aims to evaluate the performan
 - Topology: AP0 (having 2 STAs), AP1 (having 1 STA)
 - Application used: PacketSinkHelper on APs, OnOffHelper on STAs
 
+## Week4: 
+- Switched to ns-3-dev
+- Introduced YansErrorRateModel
+- Used LogDistancePropagationLossModel to introduce loss in wifi channel
+- Analyzed pcap files in Wireshark and found TCP Option SACK_PERM 
+- When loss was introduced, we found TCP Option SACK turned on in DUP ACKs
+
+![Wireshark output TCP Option4 SACK_PERM](./images/sack-permitted-tcp-option4-wireshark.png)
+![Wireshark output TCP Option5 SACK](./images/sack-tcp-option5-wireshark.png)
+    
 # Experiment Criteria
 - 
 
