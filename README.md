@@ -7,10 +7,10 @@ operating systems. It has an additional property of improving the TCP performanc
 
 ns-3 has an in built model for SACK. This project aims to evaluate the performanceof different TCP extensions in wireless networks, with and without SACK.
 
-#Why SACK is more relevant when used in Wireless over wired networks?
--Since chances of packet loss is way higher in general in wireless than wired so Retransmissions happens faster if SACK is used. Plus the application at the receiver side won't need to wait for longer gaps to be filled in the receiver buffer.
+# Why SACK is more relevant when used in Wireless over wired networks?
+- Since chances of packet loss is way higher in general in wireless than wired so retransmissions happens faster if SACK is used. Plus the application at the receiver side won't need to wait for longer gaps to be filled in the receiver buffer.
 
--Delivery rate or data rate estimatation is more accurate if SACK is used, hence it helps many wireless alogrithms like Westwood.
+- Delivery rate or data rate estimatation is more accurate if SACK is used, hence it helps many wireless alogrithms like Westwood.
 
 # Setup
 - Network Simulator: ns-3-dev
