@@ -16,6 +16,10 @@ ns-3 has an in built model for SACK. This project aims to evaluate the performan
 - Network Simulator: ns-3-dev
 - Operating System: Ubuntu 20.04.2 LTS
 
+# Topology
+
+![Topology](./images/topology.png)
+
 # Weekly Progress
 
 ## Week1: 
@@ -48,7 +52,35 @@ ns-3 has an in built model for SACK. This project aims to evaluate the performan
 - Changed the data rate and distance between the nodes and APs and repeated the experiment. Analyzed the pcap file for prescence of TCP SACK and SACK_PERM options. 
 - TCP Westwood is used for the experiments.
  
-The results are summarized in this [table](./week5/TCPWestwood_distance_datarate.csv).                        
+The results are summarized in this [table](./week5/TCPWestwood_distance_datarate.csv).
+
+# Observations and Results
+
+* To simulate a lossy channel in a wireless network, `YansErrorRateModel`. `NistErrorRateModel` or `TableBasedErrorRateModel` can be used. `YansErrorRateModel` has been used for these experiments. Error rate cannot be directly specified using either of the above mentioned model. Different amounts of error can be introduced by either using a loss model like , `LogDistancePropagationLossModel`, or by varying the datarate and distance between the nodes.
+  
+* SACK can be turned on for a simulation in ns3 by using the below line of code, where `sack` can be true/false.
+  ```
+    Config::SetDefault ("ns3::TcpSocketBase::Sack", BooleanValue (sack));
+  ```
+  
+  TCP varient is modified the below line of code, where `tcpVarient` is a string with the name of the TCP varient to be used.
+  ```
+    Config::SetDefault ("ns3::TcpL4Protocol::SocketType", ypeIdValue (TypeId::LookupByName (tcpVariant)));
+  ```
+
+* On introducing error in the channel SACK and SACK_PERM options were found in the TCP header options by analyzing the pcap files on Wireshark.
+
+* The transmitted sequence number is higher when SACK is enabled as compared to when it is disabled. This is becaused  the tranmission can can recover quickly and can send more data avoiding the retransmission of already received blocks.
+
+* With SACK the congestion windows is highe rbecause it does fewer retransmissions (thanks to its principles) and there is a lower probability that a retransmied segment is lost. 
+
+TCP CUBIC congestion window with and without SACK enabled.
+
+![TCP cubic cwnd](./week6/TcpCubic/TcpCubic-cwnd.png)
+
+TCP CUBIC transmitted sequence number with and without SACK enabled.
+
+![TCP cubic transmitted sequence number](./week6/TcpCubic/TcpCubic-next-tx.png)
 
 # Team members: 
 * **Manas Gupta**
