@@ -15,6 +15,8 @@ The cofiguration of the network is included in the below table.
 
 ## Results
 
+The throghuput related results can be found in the file [TCP_varients_Tthroughput.csv](./TCP_varients_throughput.csv).
+
 ### TCP BIC
 
 #### Congestion window
