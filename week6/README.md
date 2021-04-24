@@ -1,6 +1,6 @@
-## Comparsion of different TCP varients with SACK option enabled/disabled
+## Comparsion of different TCP variants with SACK option enabled/disabled
 
-* This directory contains results of simulation of different TCP varients including, `TCP BIC`, `TCP CUBIC`, `TCP High Speed`, `TCP HTCP`, `TCP Scalable`, `TCP Vegas` and `TCP Westwood`.
+* This directory contains results of simulation of different TCP variants including, `TCP BIC`, `TCP CUBIC`, `TCP High Speed`, `TCP HTCP`, `TCP Scalable`, `TCP Vegas` and `TCP Westwood`.
 * The parameters analyzed includes, congestion window, sequence number and throughput.
 
 The topology used is shown in the below figure.
@@ -15,7 +15,7 @@ The cofiguration of the network is included in the below table.
 
 ## Results
 
-The throghuput related results can be found in the file [TCP_varients_Tthroughput.csv](./TCP_varients_throughput.csv).
+The throghuput related results can be found in the file [TCP_variants_Tthroughput.csv](./TCP_variants_throughput.csv).
 
 ### TCP BIC
 

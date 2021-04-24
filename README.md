@@ -54,6 +54,13 @@ ns-3 has an in built model for SACK. This project aims to evaluate the performan
  
 The results are summarized in this [table](./week5/TCPWestwood_distance_datarate.csv).
 
+## Week6:
+- Analyzed congestion window, transmitted sequence number and throughput for different TCP variants.
+
+- The TCP vairents considered for the simulations include, `TCP BIC`, `TCP CUBIC`, `TCP High Speed`, `TCP HTCP`, `TCP Scalable`, `TCP Vegas` and `TCP Westwood`.
+
+- The results can be found in the [week6](./week6) directory.
+
 # Observations and Results
 
 * To simulate a lossy channel in a wireless network, `YansErrorRateModel`. `NistErrorRateModel` or `TableBasedErrorRateModel` can be used. `YansErrorRateModel` has been used for these experiments. Error rate cannot be directly specified using either of the above mentioned model. Different amounts of error can be introduced by either using a loss model like , `LogDistancePropagationLossModel`, or by varying the datarate and distance between the nodes.
@@ -65,7 +72,7 @@ The results are summarized in this [table](./week5/TCPWestwood_distance_datarate
   
   TCP varient is modified the below line of code, where `tcpVarient` is a string with the name of the TCP varient to be used.
   ```
-    Config::SetDefault ("ns3::TcpL4Protocol::SocketType", ypeIdValue (TypeId::LookupByName (tcpVariant)));
+    Config::SetDefault ("ns3::TcpL4Protocol::SocketType", TypeIdValue (TypeId::LookupByName (tcpVariant)));
   ```
 
 * On introducing error in the channel SACK and SACK_PERM options were found in the TCP header options by analyzing the pcap files on Wireshark.
